@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void bubbleSort(int arr[], int n) // Declaring
+{
+   int a, b;
+   bool swapped;
+   for (a = 0; a < n-1; a++)
+   {
+     swapped = false;
+     for (b = 0; b < n-a-1; b++)
+     {
+        if (arr[b] > arr[b+1])
+        {
+           swap(arr[b], arr[b+1]);
+           swapped = true;
+        }
+     }
+
+     // IF no two elements were swapped
+     // by inner loop, then break
+     if (swapped == false)
+        break;
+   }
+}
+
+// Prints the array
+void printArray(int arr[], int size)
+{
+    int a;
+    for (a = 0; a < size; a++)
+        cout <<" "<< arr[a];
+}
+
+// The program that runs the fuction above
+int main()
+{
+    int arr[13] = {71, 71, 68, 69, 72, 73, 69, 64, 65, 72, 71, 74, 69};
+    int N = sizeof(arr)/sizeof(arr[0]);
+    bubbleSort(arr, N);
+    cout <<"Sorted heights: \n";
+    printArray(arr, N);
+    return 0;
+}
